@@ -24,6 +24,22 @@ get '/' do
   erb :index
 end
 
+get '/visit' do
+  erb :visit
+end
+
+get '/contacts' do
+  erb :contacts
+end
+
+get '/barbers' do
+  erb :barbers
+end 
+
+get '/about' do
+  erb :about
+end
+
 get '/login/form' do
   erb :login_form
 end

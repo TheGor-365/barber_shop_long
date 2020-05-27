@@ -17,26 +17,24 @@
   </head>
   <body>
 		<div class="container">
-
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand mr-5" href="/">Barber Shop</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
 							<a class="nav-link" href="/visit">Visit<span class="sr-only">(current)</span></a>
 						</li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Barbers<span class="sr-only"></span></a>
+              <a class="nav-link" href="/barbers">Barbers<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacts<span class="sr-only"></span></a>
+              <a class="nav-link" href="/contacts">Contacts<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About<span class="sr-only"></span></a>
+              <a class="nav-link" href="/about">About<span class="sr-only"></span></a>
             </li>
 					</ul>
           <ul class="nav navbar-right">
@@ -53,14 +51,12 @@
           </ul>
 				</div>
 			</nav>
-
 			<div>
 				<% if @error then %>
 						<div class="alert alert-danger"><%=@error%></div>
 				<% end %>
 				<%= yield %>
 			</div>
-
 		</div>
   </body>
 </html>
