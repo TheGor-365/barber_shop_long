@@ -34,7 +34,7 @@ end
 
 get '/barbers' do
   erb :barbers
-end 
+end
 
 get '/about' do
   erb :about
@@ -44,12 +44,6 @@ get '/login/form' do
   erb :login_form
 end
 
-post '/login/attempt' do
-  session[:identity] = params['username']
-  where_user_came_from = session[:previous_url] || '/'
-  redirect to where_user_came_from
-end
-
 get '/logout' do
   session.delete(:identity)
   erb "<div class='alert alert-message'>Logged out</div>"
@@ -57,4 +51,19 @@ end
 
 get '/secure/place' do
   erb 'This is a secret place that only <%=session[:identity]%> has access to!'
+end
+
+post '/login/attempt' do
+  session[:identity] = params['username']
+  where_user_came_from = session[:previous_url] || '/'
+  redirect to where_user_came_from
+end
+
+post '/visit' do
+  @username = params[:username]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
+  @barbers = params[:barbers]
+
+  erb :visit
 end

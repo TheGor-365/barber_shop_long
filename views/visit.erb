@@ -1,3 +1,8 @@
+<div class="row mt-3">
+	<div class="col">
+		<button class="btn btn-sm btn-success" type="button" onclick="bgColor()">Set background color</button>
+	</div>
+</div>
 <div class="jumbotron mt-5">
 	<h1>Sign up for a haircut</h1>
 </div>
@@ -6,21 +11,35 @@
 	<div class="row ">
 		<small class="text-muted mb-3">Complete all fields and send us, we will prepare for your visit</small>
 	</div>
-	
+
 	<form action="/visit" method="post">
 	  <div class="form-group">
 	    <label>Your name:</label>
-	    <input type="text" name="username" class="form-control" placeholder="Enter your name">
+	    <input type="text" name="username" class="form-control">
 	  </div>
-  	  <div class="form-group">
+	  <div class="form-group">
 	    <label>Your phone:</label>
-	    <input type="text" name="phone" class="form-control" placeholder="Enter your phone">
+	    <input type="text" name="phone" class="form-control">
 	  </div>
-  	  <div class="form-group">
+	  <div class="form-group">
 	    <label>Visiting date and time:</label>
-	    <input type="text" name="date_time" class="form-control" placeholder="Enter your visit date and time">
+	    <input type="text" name="date_time" class="form-control">
 	  </div>
+
+		<div class="form-group">
+			<label for="select_barber">Select the barber:</label>
+			<select class="form-control" name="barber" id="select_barber">
+				<option>Jessie Pinkman</option>
+				<option>Walter White</option>
+				<option>Gus Fring</option>
+			</select>
+		</div>
 
 	  <button type="submit" class="btn btn-primary">Sign up</button>
 	</form>
 </div>
+
+<script type="text/javascript">
+	$('.container.border.p-5.rounded-sm').css('background-color', '#d9ffe5');
+	$('.jumbotron.mt-5').css('background-color', '#ededed');
+</script>
