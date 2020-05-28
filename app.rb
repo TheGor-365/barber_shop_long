@@ -63,7 +63,14 @@ post '/visit' do
   @username = params[:username]
   @phone = params[:phone]
   @date_time = params[:date_time]
-  @barbers = params[:barbers]
+  @barber = params[:barber]
+  @color = params[:color]
+  @signup = params[:signup]
+
+  if @signup
+    @message = "Name: #{@username} | Phone: #{@phone} | Visit at: #{@date_time} | Barber: #{@barber} | Hear color: #{@color}"
+  end
+
 
   erb :visit
 end
