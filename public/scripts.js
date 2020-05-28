@@ -1,5 +1,3 @@
-const bgColor = () => {
-  $('.jumbotron.mt-5').css('background-color', '#d9ffe5')
+const myFunction = () => {
+  document.getElementById('jumb').style.backgroundColor = '#a7b2ff'
 }
-
-bgColor()
