@@ -67,10 +67,21 @@ post '/visit' do
   @color = params[:color]
   @signup = params[:signup]
 
+  hh = {
+    username: 'Input your name',
+    phone: 'Input your phone',
+    date_time: 'Input date and time',
+    barber: 'Input barber',
+    color: 'Input color'
+  }
+
+  hh.each do |k, v|
+    @error = hh[k] if params[k] == ''
+  end
+
   if @signup
     @message = "Name: #{@username} | Phone: #{@phone} | Visit at: #{@date_time} | Barber: #{@barber} | Hear color: #{@color}"
   end
-
 
   erb :visit
 end
