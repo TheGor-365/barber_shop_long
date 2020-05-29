@@ -73,11 +73,15 @@ get '/secure/place' do
 end
 
 get '/public/users/users.txt' do
-  erb '<a href="http://localhost:4567/users/users.txt">'
+  erb '<a href="http://localhost:4567/users/users.txt"></a>'
 end
 
 get '/show_users' do
-
+  # db = get_db
+  # @results = db.execute 'SELECT * FROM users
+  #   ORDER BY id DESC'
+  @results = [{'a' => '1', 'b' => '2', 'c' => '3', 'd' => '4', 'i' => '5'}]
+  erb :show_users
 end
 
 post '/login/attempt' do

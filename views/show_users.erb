@@ -1,0 +1,32 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <h1>Users</h1>
+  </div>
+</div>
+
+<div class="mt-5 mb-5">
+  <%= @results %>
+</div>
+
+<table class="table p3 border rounded-sm">
+  <thead>
+    <tr>
+      <th scope="col">username</th>
+      <th scope="col">phone</th>
+      <th scope="col">date and time</th>
+      <th scope="col">barber</th>
+      <th scope="col">color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |r| %>
+      <tr>
+        <td><%= r['a'] %></td>
+        <td><%= r['b'] %></td>
+        <td><%= r['c'] %></td>
+        <td><%= r['d'] %></td>
+        <td><%= r['i'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
