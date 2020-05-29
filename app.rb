@@ -1,6 +1,19 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+# require 'sqlite3'
+
+# configure do
+#   db = get_db
+#   db.execute 'CREATE TABLE IF NOT EXESTS Users (
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     username TEXT,
+#     phone TEXT,
+#     datestamp TEXT,
+#     barber TEXT,
+#     color TEXT
+#   )'
+# end
 
 configure do
   enable :sessions
@@ -46,11 +59,15 @@ end
 
 get '/logout' do
   session.delete(:identity)
-  erb "<div class='alert alert-message'>Logged out</div>"
+  erb :index
 end
 
 get '/secure/place' do
   erb 'This is a secret place that only <%=session[:identity]%> has access to!'
+end
+
+get '/public/users/users.txt' do
+  erb '<a href="http://localhost:4567/users/users.txt">'
 end
 
 post '/login/attempt' do
@@ -90,5 +107,13 @@ post '/visit' do
     @message = "Name: #{@username} | Phone: #{@phone} | Visit at: #{@date_time} | Barber: #{@barber} | Hear color: #{@color}"
   end
 
+  # db = get_db
+  # db.execute 'INSERT INTO Users (username, phobe, datestamp, barber, color)
+  #   VALUES (?, ?, ?, ?, ?)', [@username, @phobe, @date_time, @barber, @color]
+
   erb :visit
 end
+
+# def get_db
+#   return SQLite::Database.new 'barbershop.sqlite'
+# end
