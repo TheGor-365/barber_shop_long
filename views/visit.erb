@@ -21,9 +21,12 @@
 	    <label>Your phone:</label>
 	    <input type="text" name="phone" class="form-control" value="<%= @phone %>">
 	  </div>
+
+		<!-- Datetimepicker -->
+
 	  <div class="form-group">
 	    <label>Visiting date and time:</label>
-	    <input type="text" name="date_time" class="form-control" value="<%= @date_time %>">
+	    <input id="datetimepicker" type="text" name="date_time" class="form-control" value="<%= @date_time %> " autocomplete="off">
 	  </div>
 
 		<div class="form-group">
@@ -34,6 +37,8 @@
 				<option <%= @barber == 'Gus Fring' ? 'selected' : '' %> >Gus Fring</option>
 			</select>
 		</div>
+
+		<!-- Simplecolorpicker -->
 
 		<div class="form-group">
 			<label for="select_barber">Select the color for hear:</label><br>
@@ -64,15 +69,22 @@
 	</form>
 </div>
 
+
+
 <script type="text/javascript">
+	// jQuery styles
 	$(function() {
 		$('.container.border.p-5.rounded-sm').css('background-color', '#d9e2ff');
 		$('.jumbotron.mt-5').css('background-color', '#ededed');
-	})
+	});
 
-	<!-- Simplecolorpicker -->
+	// Simplecolorpicker
 	$(function() {
 		$('#color_picker').simplecolorpicker();
-	})
+	});
 
+	// Datetimepicker
+	$(function() {
+		$('#datetimepicker').datetimepicker();
+	});
 </script>
