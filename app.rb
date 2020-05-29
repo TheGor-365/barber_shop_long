@@ -3,6 +3,12 @@ require 'sinatra'
 require 'sinatra/reloader'
 # require 'sqlite3'
 
+# def get_db
+#   db = SQLite::Database.new 'barbershop.sqlite'
+#   db.results_as_hash = true
+#   return db
+# end
+
 # configure do
 #   db = get_db
 #   db.execute 'CREATE TABLE IF NOT EXESTS Users (
@@ -117,9 +123,3 @@ post '/visit' do
 
   erb :visit
 end
-
-# def get_db
-#   db = SQLite::Database.new 'barbershop.sqlite'
-#   db.results_as_hash = true
-#   return db
-# end
