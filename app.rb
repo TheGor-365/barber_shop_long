@@ -145,7 +145,12 @@ post '/visit' do
   # end
 
   if @signup
-    @message = "Name: #{@username} | Phone: #{@phone} | Visit at: #{@date_time} | Barber: #{@barber} | Hear color: #{@color}"
+    @message = "Thanks, we'll be waiting for you!\n\n
+    Name:       #{@username}
+    Phone:      #{@phone}
+    Visit at:   #{@date_time}
+    Barber:     #{@barber}
+    Hear color: #{@color}"
   end
 
   # db = get_db

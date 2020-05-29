@@ -12,6 +12,14 @@
 		<small class="text-muted mb-3">Complete all fields and send us, we will prepare for your visit</small>
 	</div>
 
+	<div class="container mt-3 mb-4 ">
+		<% if @message %>
+			<small class="alert alert-success">
+				<%= @message %>
+			</small>
+		<% end %>
+	</div>
+
 	<form action="/visit" method="post">
 	  <div class="form-group">
 	    <label>Your name:</label>
@@ -67,12 +75,6 @@
 		</div>
 
 	  <button type="submit" class="btn btn-primary" name="signup">Sign up</button>
-
-		<% if @message %>
-			<p class="alert alert-success mt-4">
-				<%= @message %>
-			</p>
-		<% end %>
 	</form>
 </div>
 
