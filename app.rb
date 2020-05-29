@@ -67,6 +67,10 @@ post '/visit' do
   @color = params[:color]
   @signup = params[:signup]
 
+  f = File.open 'public/users/users.txt', 'a'
+  f.write "Name: #{@username} | Phone: #{@phone} | Date and time: #{@date_time} | Barber: #{@barber} | Color: #{@color}\n"
+  f.close
+
   hh = {
     username: 'Input your name',
     phone: 'Input your phone',
@@ -75,9 +79,12 @@ post '/visit' do
     color: 'Input color'
   }
 
-  hh.each do |k, v|
-    @error = hh[k] if params[k] == ''
-  end
+  @error = hh.select { |key,_| params[key] == '' }.values.join(', ')
+
+  # First validation version:
+  # hh.each do |k, v|
+  #   @error = hh[k] if params[k] == ''
+  # end
 
   if @signup
     @message = "Name: #{@username} | Phone: #{@phone} | Visit at: #{@date_time} | Barber: #{@barber} | Hear color: #{@color}"
