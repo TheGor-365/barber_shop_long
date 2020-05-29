@@ -70,6 +70,10 @@ get '/public/users/users.txt' do
   erb '<a href="http://localhost:4567/users/users.txt">'
 end
 
+get '/show_users' do
+
+end
+
 post '/login/attempt' do
   session[:identity] = params['username']
   where_user_came_from = session[:previous_url] || '/'
@@ -115,5 +119,7 @@ post '/visit' do
 end
 
 # def get_db
-#   return SQLite::Database.new 'barbershop.sqlite'
+#   db = SQLite::Database.new 'barbershop.sqlite'
+#   db.results_as_hash = true
+#   return db
 # end
