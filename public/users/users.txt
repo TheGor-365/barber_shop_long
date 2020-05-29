@@ -12,3 +12,6 @@ Name:  | Phone:  | Date and time: 2020/05/14 18:59 | Barber: Jessie Pinkman | Co
 Name:  | Phone:  | Date and time: 2020/05/14 18:59 | Barber: Jessie Pinkman | Color: #ffffff
 Name:  | Phone:  | Date and time: 2020/05/14 18:59  | Barber: Jessie Pinkman | Color: #ffffff
 Name:  | Phone:  | Date and time: 2020/05/14 18:59   | Barber: Jessie Pinkman | Color: #ffffff
+Name: Gor | Phone: +7 (916) 083-29-93 | Date and time: 2020/05/14 21:51 | Barber: Gus Fring | Color: none
+Name: Gor | Phone: +7 (916) 083-29-93 | Date and time: 14.08. at 22:00 | Barber: Gus Fring | Color: #7ae7bf
+Name: Gor | Phone: +7 (916) 083-29-93 | Date and time: 14.08. at 22:00 | Barber: Gus Fring | Color: #7ae7bf

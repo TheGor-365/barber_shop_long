@@ -32,9 +32,16 @@
 		<div class="form-group">
 			<label for="select_barber">Select the barber:</label>
 			<select class="form-control" name="barber" id="select_barber">
-				<option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %> >Jessie Pinkman</option>
+				<!-- <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %> >Jessie Pinkman</option>
 				<option <%= @barber == 'Walter White' ? 'selected' : '' %> >Walter White</option>
-				<option <%= @barber == 'Gus Fring' ? 'selected' : '' %> >Gus Fring</option>
+				<option <%= @barber == 'Gus Fring' ? 'selected' : '' %> >Gus Fring</option> -->
+
+				<% @barbers.each do |barber| %>
+					<option <%= @barber == barber['1'] ? 'selected' : '' %> ><%= barber['1'] %></option>
+					<option <%= @barber == barber['2'] ? 'selected' : '' %> ><%= barber['2'] %></option>
+					<option <%= @barber == barber['3'] ? 'selected' : '' %> ><%= barber['3'] %></option>
+					<option <%= @barber == barber['4'] ? 'selected' : '' %> ><%= barber['4'] %></option>
+				<% end %>
 			</select>
 		</div>
 
@@ -43,7 +50,7 @@
 		<div class="form-group">
 			<label for="select_barber">Select the color for hear:</label><br>
 			<select class="form-control" id="color_picker" name="color">
-				<option value="#ffffff">None</option>
+				<option value="none">None</option>
 				<option value="#7bd148">Green</option>
 				<option value="#5484ed">Bold blue</option>
 				<option value="#a4bdfc">Blue</option>
